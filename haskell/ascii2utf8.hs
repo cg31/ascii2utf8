@@ -41,7 +41,7 @@ doFile2 fileName = do
         unless (utf8BOM `BS.isPrefixOf` fileData) $ do
             let newData = BS.concat [utf8BOM, fileData]
             BS.writeFile fileName newData
-            print newData
+            --print newData
 
 --------------------------------------------------------------------------------
 
