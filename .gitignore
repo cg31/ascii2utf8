@@ -1,0 +1,11 @@
+**/ipch
+**/obj
+**/testfiles
+**/Debug
+**/Release
+*.exe
+*.sdf
+*.suo
+*.user
+*.opensdf
+
