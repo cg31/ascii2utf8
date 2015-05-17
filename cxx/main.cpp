@@ -10,17 +10,17 @@ static const BYTE utf8BOM[] = { 0xEF, 0xBB, 0xBF };
 
 int main(int argc, char* argv[])
 {
-	fs::path p = fs::current_path();
+    fs::path p = fs::current_path();
 
-	for (fs::recursive_directory_iterator iter(p); iter != fs::recursive_directory_iterator(); ++iter)
-	{
-		if (fs::is_regular(iter->status()))
-		{
-			fs::path file_path = iter->path();
+    for (fs::recursive_directory_iterator iter(p); iter != fs::recursive_directory_iterator(); ++iter)
+    {
+        if (fs::is_regular(iter->status()))
+        {
+            fs::path file_path = iter->path();
 
-			std::string ext = extension(iter->path());
+            std::string ext = extension(iter->path());
             if (ext == _T(".htm") || ext == _T(".html") || ext == _T(".xhtml"))
-			{
+            {
                 fs::basic_ifstream<BYTE> instream(file_path, std::ios_base::in | std::ios_base::binary);
                 if (!instream.is_open())
                 {
@@ -57,11 +57,11 @@ int main(int argc, char* argv[])
                 outstream.write(str_file.data(), fsize);
 
                 outstream.close();
-			}
-		}
-	}
+            }
+        }
+    }
 
-	return 0;
+    return 0;
 }
 
 
